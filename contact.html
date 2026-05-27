@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact page for Arnav Jain portfolio."
+    />
+    <title>Arnav Jain | Contact</title>
+    <link rel="icon" type="image/png" href="./assets/arnav-jain-photo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="./index.html" class="logo">Arnav Jain</a>
+        <nav class="nav-links">
+          <a href="./index.html">Home</a>
+          <a href="./journey.html">Journey</a>
+          <a href="./work.html">Work</a>
+          <a class="active" href="./contact.html">Contact</a>
+        </nav>
+        <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div id="mobile-menu" class="mobile-nav">
+          <p class="mobile-nav-label">Navigation</p>
+          <a href="./index.html" style="--order: 1">Home</a>
+          <a href="./journey.html" style="--order: 2">Journey</a>
+          <a href="./work.html" style="--order: 3">Work</a>
+          <a class="active" href="./contact.html" style="--order: 4">Contact</a>
+          
+          <div class="mobile-nav-footer">
+            <p class="mobile-nav-label">Connect</p>
+            <div class="mobile-social-links">
+              <a href="https://www.instagram.com/jainn.arnav" target="_blank">Instagram</a>
+              <a href="https://www.linkedin.com/in/arnjain/" target="_blank">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+        <button id="theme-toggle" class="theme-btn" type="button">Theme</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <header class="work-hero reveal">
+        <p class="eyebrow">Get in Touch</p>
+        <h1>Let's build <span style="display: block;">something Great.</span></h1>
+        <p class="hero-text" style="margin: 0 auto;">
+          Currently open to high-impact collaborations, strategic marketing 
+          partnerships, and technical engineering roles.
+        </p>
+      </header>
+
+      <div class="contact-hub">
+        <div class="contact-info-col reveal">
+          <div class="contact-card-v2">
+            <span class="card-category">Availability</span>
+            <h3>Open for Projects</h3>
+            <p>Based in Melbourne, Australia. Working with clients globally.</p>
+          </div>
+
+          <div class="social-grid-v2">
+            <a href="https://www.instagram.com/jainn.arnav" target="_blank" class="social-tile instagram">
+              <h4>Instagram</h4>
+              <span>@jainn.arnav</span>
+            </a>
+            <a href="https://www.linkedin.com/in/arnjain/" target="_blank" class="social-tile linkedin">
+              <h4>LinkedIn</h4>
+              <span>arnjain</span>
+            </a>
+            <a href="https://github.com/arnjain" target="_blank" class="social-tile github">
+              <h4>GitHub</h4>
+              <span>@arnjain</span>
+            </a>
+            <div class="social-tile">
+              <h4>Response Time</h4>
+              <span>< 24 Hours</span>
+            </div>
+          </div>
+
+          <div class="contact-card-v2" style="margin-top: 2rem;">
+            <span class="card-category">Languages</span>
+            <p>English, Hindi, Sanskrit</p>
+          </div>
+        </div>
+
+        <div class="contact-form-col reveal">
+          <div class="contact-form-card">
+            <form action="#" method="POST" id="contact-form">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="subject">Project Type</label>
+                <select id="subject" name="subject" class="form-control">
+                  <option value="web-dev">Web Development</option>
+                  <option value="marketing">Digital Marketing</option>
+                  <option value="collab">Collaboration</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" class="form-control" placeholder="Tell me about your project goals..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem;">Send Message <span>→</span></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <section class="container section reveal" style="text-align: center; border-top: 1px solid var(--line); padding: 8rem 0;">
+        <p class="eyebrow">Global Reach</p>
+        <h2 style="font-size: 3rem;">Based in Melbourne, Australia</h2>
+        <p class="hero-text" style="margin: 2rem auto;">I operate in AEST but maintain flexible hours to collaborate with teams and clients in the US, Europe, and Asia.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> Arnav Jain</p>
+        <p>Thanks for visiting</p>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#0E1A35"/>
+  <rect x="40" y="40" width="1120" height="720" rx="28" fill="#122247" stroke="#2D467E" stroke-width="2"/>
+  <circle cx="230" cy="250" r="120" fill="#1E3365"/>
+  <circle cx="230" cy="220" r="70" fill="#89B6FF"/>
+  <rect x="130" y="315" width="200" height="170" rx="80" fill="#89B6FF"/>
+  <rect x="380" y="170" width="700" height="90" rx="16" fill="#182E5E"/>
+  <rect x="380" y="300" width="700" height="90" rx="16" fill="#182E5E"/>
+  <rect x="380" y="430" width="700" height="90" rx="16" fill="#182E5E"/>
+  <rect x="380" y="560" width="520" height="90" rx="16" fill="#182E5E"/>
+  <text x="420" y="225" fill="#56FFD7" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="700">Arnav Jain</text>
+  <text x="420" y="355" fill="#DAE8FF" font-family="Inter, Arial, sans-serif" font-size="32">Computer Science Student</text>
+  <text x="420" y="485" fill="#DAE8FF" font-family="Inter, Arial, sans-serif" font-size="32">Web Developer + Marketer</text>
+  <text x="420" y="615" fill="#DAE8FF" font-family="Inter, Arial, sans-serif" font-size="32">Building Real-World Impact</text>
+</svg>

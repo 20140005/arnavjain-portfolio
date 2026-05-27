@@ -1,0 +1,14 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="700" fill="#101B38"/>
+  <rect x="50" y="50" width="1100" height="600" rx="24" fill="#172A55" stroke="#3458A2" stroke-width="2"/>
+  <rect x="120" y="130" width="420" height="440" rx="18" fill="#203C77"/>
+  <rect x="640" y="130" width="440" height="130" rx="14" fill="#203C77"/>
+  <rect x="640" y="290" width="440" height="130" rx="14" fill="#203C77"/>
+  <rect x="640" y="450" width="440" height="120" rx="14" fill="#203C77"/>
+  <text x="660" y="210" fill="#8CD8FF" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700">Prizeman Foils</text>
+  <text x="660" y="350" fill="#D9E8FF" font-family="Inter, Arial, sans-serif" font-size="30">Creative Design</text>
+  <text x="660" y="390" fill="#D9E8FF" font-family="Inter, Arial, sans-serif" font-size="30">&amp; Marketing Internship</text>
+  <text x="660" y="525" fill="#56FFD7" font-family="Inter, Arial, sans-serif" font-size="26">2024 Foundation Stage</text>
+  <circle cx="330" cy="280" r="90" fill="#7EB0FF"/>
+  <rect x="240" y="360" width="180" height="130" rx="65" fill="#7EB0FF"/>
+</svg>

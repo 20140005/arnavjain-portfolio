@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Year by year journey of Arnav Jain from Prizeman Foils to ProCare Solar."
+    />
+    <title>Arnav Jain | Journey</title>
+    <link rel="icon" type="image/png" href="./assets/arnav-jain-photo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="./index.html" class="logo">Arnav Jain</a>
+        <nav class="nav-links">
+          <a href="./index.html">Home</a>
+          <a class="active" href="./journey.html">Journey</a>
+          <a href="./work.html">Work</a>
+          <a href="./contact.html">Contact</a>
+        </nav>
+        <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div id="mobile-menu" class="mobile-nav">
+          <p class="mobile-nav-label">Navigation</p>
+          <a href="./index.html" style="--order: 1">Home</a>
+          <a class="active" href="./journey.html" style="--order: 2">Journey</a>
+          <a href="./work.html" style="--order: 3">Work</a>
+          <a href="./contact.html" style="--order: 4">Contact</a>
+          
+          <div class="mobile-nav-footer">
+            <p class="mobile-nav-label">Connect</p>
+            <div class="mobile-social-links">
+              <a href="https://www.instagram.com/jainn.arnav" target="_blank">Instagram</a>
+              <a href="https://www.linkedin.com/in/arnjain/" target="_blank">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+        <button id="theme-toggle" class="theme-btn" type="button">Theme</button>
+      </div>
+    </header>
+
+    <main class="journey-container">
+      <header class="journey-header reveal">
+        <p class="eyebrow">Career Narrative</p>
+        <h1>My Evolution Journey</h1>
+        <p class="hero-text" style="margin: 0 auto;">
+          A chronological trace of my growth from a creative designer to a 
+          technical developer and marketing leader.
+        </p>
+      </header>
+
+      <div class="journey-timeline">
+        <section class="journey-section reveal active" data-year="2024">
+          <div class="journey-date-col">
+            <div class="date-sticky">2024</div>
+          </div>
+          <div class="journey-content-col">
+            <div class="journey-card">
+              <p class="eyebrow" style="color: var(--accent-2);">Prizeman Foils</p>
+              <h3>Creative Design Marketing Internship</h3>
+              <p>
+                The foundation of my professional career. I specialized in 
+                translating business goals into visual narratives, managing 
+                campaign assets for <strong>prizemanfoils.com</strong>, and 
+                learning the intricacies of client communication within a 
+                high-stakes industrial environment.
+              </p>
+              <div class="journey-visual-wrap">
+                <img src="./prizeman-foils.svg" alt="Prizeman Foils stage visual" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="journey-section reveal" data-year="2025">
+          <div class="journey-date-col">
+            <div class="date-sticky">2025 (Early)</div>
+          </div>
+          <div class="journey-content-col">
+            <div class="journey-card">
+              <p class="eyebrow" style="color: var(--accent);">Sunworx Energy</p>
+              <h3>Website Developer</h3>
+              <p>
+                A pivot toward the technical. I took ownership of the digital 
+                presence for a leading renewable energy firm, building 
+                <strong>sunworxenergy.com.au</strong> from the ground up. 
+                Focused on performance optimization, SEO architecture, and 
+                technical data visualizations like the <strong>Student Cost Index</strong>.
+              </p>
+              <div class="journey-visual-wrap">
+                <img src="./sunworx-energy.svg" alt="Sunworx Energy stage visual" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="journey-section reveal" data-year="2025">
+          <div class="journey-date-col">
+            <div class="date-sticky">2025 (Late)</div>
+          </div>
+          <div class="journey-content-col">
+            <div class="journey-card">
+              <p class="eyebrow" style="color: var(--accent-2);">ProCare Solar</p>
+              <h3>Head of Marketing</h3>
+              <p>
+                A leadership mandate. Currently orchestrating growth strategies 
+                by blending my technical development background with data-driven 
+                marketing. Managing end-to-end lead generation and digital 
+                transformation.
+              </p>
+              <div class="journey-visual-wrap">
+                <img src="./procare-solar.svg" alt="ProCare Solar stage visual" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="journey-section reveal" data-year="2026">
+          <div class="journey-date-col">
+            <div class="date-sticky">Next Phase</div>
+          </div>
+          <div class="journey-content-col">
+            <div class="journey-card">
+              <p class="eyebrow">Future Focus</p>
+              <h3>Product Leadership & Innovation</h3>
+              <p>
+                Moving forward, I am scaling my impact by building AI-integrated 
+                tools and platforms that solve real business problems at scale. 
+                Combining full-stack engineering with strategic product thinking.
+              </p>
+              <div class="journey-visual-wrap">
+                <img src="./profile-journey.svg" alt="Future vision visual" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> Arnav Jain</p>
+        <p>Journey from creative to technical to leadership</p>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

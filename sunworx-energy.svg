@@ -1,0 +1,14 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="700" fill="#0E1A34"/>
+  <rect x="50" y="50" width="1100" height="600" rx="24" fill="#182D59" stroke="#3760B2" stroke-width="2"/>
+  <rect x="110" y="120" width="470" height="470" rx="18" fill="#22407C"/>
+  <rect x="640" y="120" width="450" height="150" rx="14" fill="#22407C"/>
+  <rect x="640" y="300" width="450" height="130" rx="14" fill="#22407C"/>
+  <rect x="640" y="460" width="450" height="130" rx="14" fill="#22407C"/>
+  <rect x="160" y="190" width="370" height="60" rx="12" fill="#2F5CAA"/>
+  <rect x="160" y="280" width="270" height="60" rx="12" fill="#2F5CAA"/>
+  <rect x="160" y="370" width="330" height="60" rx="12" fill="#2F5CAA"/>
+  <text x="660" y="210" fill="#8CD8FF" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700">Sunworx Energy</text>
+  <text x="660" y="360" fill="#D9E8FF" font-family="Inter, Arial, sans-serif" font-size="30">Website Developer</text>
+  <text x="660" y="515" fill="#56FFD7" font-family="Inter, Arial, sans-serif" font-size="26">2025 Website Build Stage</text>
+</svg>
