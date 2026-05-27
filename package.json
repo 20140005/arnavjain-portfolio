@@ -1,0 +1,20 @@
+{
+  "name": "arnavjain-portfolio",
+  "version": "1.0.0",
+  "description": "A modern single-page developer portfolio website with a dark tech aesthetic.",
+  "private": true,
+  "scripts": {
+    "build": "node build-speed-insights.js",
+    "dev": "echo 'Open index.html in your browser'",
+    "postinstall": "npm run build"
+  },
+  "keywords": [
+    "portfolio",
+    "static-site"
+  ],
+  "author": "Arnav Jain",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  }
+}
