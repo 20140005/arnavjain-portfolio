@@ -9,11 +9,30 @@ function setTheme(mode) {
   localStorage.setItem("portfolio-theme", mode);
 }
 
-function toggleTheme() {
-  const isLight = document.body.classList.contains("light");
-  setTheme(isLight ? "dark" : "light");
+function toggleTheme(e) {
+  const transition = document.querySelector(".theme-transition");
+  
+  // Capture click coordinates for the radial transition
+  const x = e.clientX || window.innerWidth / 2;
+  const y = e.clientY || window.innerHeight / 2;
+  
+  document.documentElement.style.setProperty('--mouse-x', `${x}px`);
+  document.documentElement.style.setProperty('--mouse-y', `${y}px`);
+  
+  // Trigger portal effect
+  transition.classList.add("active");
+  
+  setTimeout(() => {
+    const isLight = document.body.classList.contains("light");
+    setTheme(isLight ? "dark" : "light");
+  }, 400); // Change theme halfway through transition
+  
+  setTimeout(() => {
+    transition.classList.remove("active");
+  }, 1000); // Wait for transition to complete
 }
 
+// Update setupTheme to pass event object
 function setupTheme() {
   const saved = localStorage.getItem("portfolio-theme");
   if (saved === "light") {
@@ -21,7 +40,7 @@ function setupTheme() {
   } else if (!saved && window.matchMedia("(prefers-color-scheme: light)").matches) {
     setTheme("light");
   }
-  if (themeToggle) themeToggle.addEventListener("click", toggleTheme);
+  if (themeToggle) themeToggle.addEventListener("click", (e) => toggleTheme(e));
 }
 
 // Year Logic
