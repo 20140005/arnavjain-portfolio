@@ -37,6 +37,8 @@ function setupTheme() {
   const saved = localStorage.getItem("portfolio-theme");
   if (saved === "light") {
     setTheme("light");
+  } else if (!saved && window.matchMedia("(prefers-color-scheme: light)").matches) {
+    setTheme("light");
   }
   if (themeToggle) themeToggle.addEventListener("click", (e) => toggleTheme(e));
 }

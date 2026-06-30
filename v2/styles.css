@@ -1,0 +1,241 @@
+:root {
+  --bg: #f5f5f3; /* Paper-like off-white */
+  --text: #1a1a1a;
+  --muted: #555555;
+  --accent: #2d3e2d; /* Sophisticated deep green */
+  --line: #d1d1cf;
+  --container-width: 1100px;
+}
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: "Inter", -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* Typography Shift - Using Serif for Headings */
+h1, h2, h3, h4 {
+  font-family: "Playfair Display", serif; /* High-end Serif */
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Navigation - Elegant & Slim */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(245, 245, 243, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  z-index: 1000;
+}
+
+.nav-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: var(--text);
+  text-transform: lowercase;
+  letter-spacing: -0.05em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 3rem;
+}
+
+.nav-links a {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--text);
+}
+
+/* Hero - Refined & Typographic */
+.hero {
+  padding: 12rem 0 8rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  margin-bottom: 3rem;
+}
+
+.hero-text {
+  font-size: 1.4rem;
+  max-width: 700px;
+  color: var(--muted);
+  margin-bottom: 4rem;
+  font-style: italic;
+  font-family: "Playfair Display", serif;
+}
+
+/* Buttons - Sharp & Industrial */
+.btn {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  text-decoration: none;
+  padding: 1rem 2.5rem;
+  display: inline-flex;
+  transition: all 0.3s ease;
+  border: 1px solid var(--text);
+}
+
+.btn-primary {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--text);
+}
+
+.btn-secondary {
+  color: var(--text);
+  background: transparent;
+}
+
+.btn-secondary:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* Section Grid */
+.section {
+  padding: 8rem 0;
+}
+
+.section h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 5rem;
+}
+
+/* Expertise - Clean List */
+.expertise-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.expertise-item {
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.expertise-item h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.expertise-item p {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+/* Strategy - Numbered Grid */
+.studio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.studio-card {
+  padding: 3rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  position: relative;
+}
+
+.studio-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.studio-card.wide {
+  grid-column: span 2;
+}
+
+/* Footer - Sophisticated */
+.site-footer {
+  padding: 6rem 0;
+  border-top: 1px solid var(--line);
+  background: #fff;
+}
+
+.footer-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Animations - Subtle Fade */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .expertise-list { grid-template-columns: 1fr; }
+  .studio-grid { grid-template-columns: 1fr; }
+  .studio-card.wide { grid-column: span 1; }
+  h1 { font-size: 3.5rem; }
+}
+
+/* Hide theme toggle */
+#theme-toggle, .theme-transition { display: none !important; }

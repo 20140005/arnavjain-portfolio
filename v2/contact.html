@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,follow" />
+    <link rel="canonical" href="https://arnavjain.com/contact.html" />
+    <title>Arnav Jain | Contact</title>
+    <link rel="icon" type="image/png" href="../assets/arnav-jain-photo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="./index.html" class="logo">arnav jain</a>
+        <nav class="nav-links">
+          <a href="./index.html">Home</a>
+          <a href="./journey.html">Journey</a>
+          <a href="./work.html">Work</a>
+          <a class="active" href="./contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <header class="hero reveal" style="min-height: 40vh; padding-top: 12rem;">
+        <p class="eyebrow">Collaboration / Inquiry</p>
+        <h1>Let's Talk.</h1>
+      </header>
+
+      <div class="contact-hub reveal">
+        <div class="contact-info">
+          <p class="eyebrow">Availability</p>
+          <h4 style="font-size: 1.5rem; margin: 1rem 0; font-family: 'Playfair Display', serif;">Open for Strategic Projects</h4>
+          <p style="color: #666; margin-bottom: 3rem;">Based in Melbourne, Australia. Working with clients globally across all time zones.</p>
+
+          <p class="eyebrow">Social</p>
+          <div class="nav-links" style="flex-direction: column; gap: 1.5rem; margin: 2rem 0;">
+            <a href="https://www.linkedin.com/in/arnjain/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/arnjain" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.instagram.com/jainn.arnav" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+          
+          <p class="eyebrow" style="margin-top: 4rem;">Languages</p>
+          <p style="font-size: 1.2rem; font-weight: 700; margin-top: 1rem; font-family: 'Playfair Display', serif;">English, Hindi, Sanskrit</p>
+        </div>
+
+        <div class="contact-form">
+          <form action="https://formspree.io/f/xkoekpbr" method="POST">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Project Type</label>
+              <select id="subject" name="subject" class="form-control">
+                <option value="web-dev">Web Development</option>
+                <option value="marketing">Digital Marketing</option>
+                <option value="collab">Collaboration</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" class="form-control" placeholder="Briefly describe your goals..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+      <section class="section reveal" style="border-top: 1px solid var(--line); margin-top: 8rem; text-align: center;">
+        <p class="eyebrow">Global Reach</p>
+        <h2 style="font-size: 3rem;">Melbourne & Beyond</h2>
+        <p style="font-size: 1.4rem; font-family: 'Playfair Display', serif; font-style: italic; color: #666; max-width: 800px; margin: 2rem auto;">I operate in AEST but maintain flexible hours to collaborate with teams and clients in the US, Europe, and Asia.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <div>
+          <p class="eyebrow" style="color: #666;">Ready for the next step?</p>
+          <h2 style="margin:0;">Connect.</h2>
+        </div>
+        <p>© 2026 Arnav Jain</p>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
