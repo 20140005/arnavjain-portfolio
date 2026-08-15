@@ -21,6 +21,7 @@ Open `http://127.0.0.1:5500/`
 ## Main pages
 
 - `/` — cinematic home narrative
+- `/about.html` — about / profile page
 - `/work.html` — selected work
 - `/work/ajcrm/` — AJCRM case study
 - `/global-sync-managing-director.html` — Global Sync role page

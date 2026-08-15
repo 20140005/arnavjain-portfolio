@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta
       name="description"
       content="Arnav Jain is the Managing Director at Global Sync, focused on business strategy, digital solutions, CRM systems, web development, and digital growth."
@@ -87,21 +87,40 @@
         <nav class="nav-links">
           <a href="./work.html">WORK</a>
           <a href="./journey.html">JOURNEY</a>
-          <a href="./index.html#about">ABOUT</a>
+          <a href="./about.html">ABOUT</a>
           <a href="./contact.html">CONTACT</a>
         </nav>
-        <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Toggle Menu">
-          <span></span><span></span><span></span>
-        </button>
-        <div id="mobile-menu" class="mobile-nav">
-          <a href="./work.html">WORK</a>
-          <a href="./journey.html">JOURNEY</a>
-          <a href="./index.html#about">ABOUT</a>
-          <a href="./contact.html">CONTACT</a>
+<div class="nav-actions">
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch visual theme" aria-pressed="false">
+            <span class="theme-toggle-icons" aria-hidden="true">
+              <span class="theme-icon theme-icon-dark"></span>
+              <span class="theme-icon theme-icon-max"></span>
+            </span>
+            <span class="theme-toggle-copy">
+              <span class="theme-toggle-mode" data-theme-mode>CINEMATIC</span>
+            </span>
+          </button>
+          <button id="mobile-toggle" class="mobile-nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span class="menu-toggle-box" aria-hidden="true">
+              <span class="menu-toggle-line"></span>
+              <span class="menu-toggle-line"></span>
+              <span class="menu-toggle-line"></span>
+            </span>
+          </button>
         </div>
-        <button id="theme-toggle" class="theme-btn" type="button">THEME</button>
       </div>
     </header>
+
+    <div id="mobile-menu" class="mobile-nav" hidden>
+      <div class="mobile-nav-panel">
+        <p class="mobile-nav-eyebrow">Menu</p>
+        <a href="./work.html"><span class="mobile-nav-index">01</span>WORK</a>
+        <a href="./journey.html"><span class="mobile-nav-index">02</span>JOURNEY</a>
+        <a href="./about.html"><span class="mobile-nav-index">03</span>ABOUT</a>
+        <a href="./contact.html"><span class="mobile-nav-index">04</span>CONTACT</a>
+      </div>
+    </div>
+
 
     <main class="journey-container">
       <section class="scene" style="padding-top: 9rem;">

@@ -1,8 +1,8 @@
-const themeToggle = document.getElementById("theme-toggle");
 const yearNode = document.getElementById("year");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const isTouch = window.matchMedia("(pointer: coarse)").matches;
 const isCinematicDesktop = () => window.innerWidth > 1024 && !isTouch;
+const isPhoneViewport = () => window.innerWidth <= 480;
 let rafSetStretch = null;
 const MOTION = {
   easePrimary: "power3.inOut",
@@ -15,8 +15,17 @@ const ABOUT_HORIZONTAL_IDS = new Set([
 ]);
 
 function setTheme(mode) {
-  document.body.classList.toggle("light", mode === "light");
+  const isLight = mode === "light";
+  document.body.classList.toggle("light", isLight);
   localStorage.setItem("portfolio-theme", mode);
+
+  const toggle = document.getElementById("theme-toggle");
+  if (!toggle) return;
+  toggle.setAttribute("aria-pressed", isLight ? "true" : "false");
+  const modeLabel = toggle.querySelector("[data-theme-mode]");
+  if (modeLabel) {
+    modeLabel.textContent = isLight ? "MAXIMAL" : "CINEMATIC";
+  }
 }
 
 function toggleTheme(event) {
@@ -44,9 +53,8 @@ function toggleTheme(event) {
 
 function setupTheme() {
   const saved = localStorage.getItem("portfolio-theme");
-  if (saved === "light") {
-    setTheme("light");
-  }
+  setTheme(saved === "light" ? "light" : "dark");
+  const themeToggle = document.getElementById("theme-toggle");
   if (themeToggle) {
     themeToggle.addEventListener("click", (event) => toggleTheme(event));
   }
@@ -100,15 +108,56 @@ function setupMobileNav() {
   const menu = document.getElementById("mobile-menu");
   if (!toggle || !menu) return;
 
-  toggle.addEventListener("click", () => {
-    const open = menu.classList.toggle("open");
+  // Keep overlay outside transformed/filtered header stacking contexts.
+  if (menu.parentElement !== document.body) {
+    document.body.appendChild(menu);
+  }
+
+  const setOpen = (open) => {
+    toggle.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    document.body.classList.toggle("menu-open", open);
     document.body.style.overflow = open ? "hidden" : "";
+
+    if (open) {
+      menu.hidden = false;
+      window.requestAnimationFrame(() => {
+        menu.classList.add("open");
+      });
+      return;
+    }
+
+    menu.classList.remove("open");
+    window.setTimeout(() => {
+      if (!menu.classList.contains("open")) menu.hidden = true;
+    }, 320);
+  };
+
+  toggle.setAttribute("aria-expanded", "false");
+  toggle.setAttribute("aria-controls", "mobile-menu");
+  menu.hidden = true;
+
+  toggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+    setOpen(!menu.classList.contains("open"));
   });
+
   menu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      menu.classList.remove("open");
-      document.body.style.overflow = "";
-    });
+    link.addEventListener("click", () => setOpen(false));
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menu.classList.contains("open")) {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768 && menu.classList.contains("open")) {
+      setOpen(false);
+    }
   });
 }
 
@@ -296,19 +345,26 @@ function setupSelectedWorkScroller(gsap, ScrollTrigger) {
     progressFill.style.transform = `scaleX(${Math.max(0, Math.min(1, progress)).toFixed(3)})`;
   };
 
+  // Phones: CSS stacks cards vertically — no horizontal scroller / pin.
+  if (isPhoneViewport()) {
+    wrap.classList.remove("native-horizontal", "is-pinned");
+    gsap?.set?.(track, { clearProps: "x" });
+    setProgress(0);
+    return;
+  }
+
   const syncNativeProgress = () => {
     const max = wrap.scrollWidth - wrap.clientWidth;
     setProgress(max > 0 ? wrap.scrollLeft / max : 0);
   };
 
-  // Always keep a real horizontal scroller as base behavior.
   wrap.classList.add("native-horizontal");
+  wrap.classList.remove("is-pinned");
   wrap.addEventListener("scroll", syncNativeProgress, { passive: true });
   syncNativeProgress();
 
-  if (isTouch) return;
+  if (isTouch || !isCinematicDesktop()) return;
 
-  // Convert vertical wheel into horizontal while this row has room.
   let wheelRaf = null;
   let pendingDelta = 0;
   wrap.addEventListener(
@@ -334,7 +390,7 @@ function setupSelectedWorkScroller(gsap, ScrollTrigger) {
     { passive: false }
   );
 
-  if (!gsap || !ScrollTrigger || !isCinematicDesktop()) return;
+  if (!gsap || !ScrollTrigger) return;
 
   const distance = () => Math.max(0, track.scrollWidth - wrap.clientWidth);
   if (distance() < 10) return;
@@ -356,7 +412,7 @@ function setupSelectedWorkScroller(gsap, ScrollTrigger) {
       invalidateOnRefresh: true,
       onUpdate: (self) => setProgress(self.progress),
       onRefresh: () => {
-        if (distance() < 10) {
+        if (distance() < 10 || isPhoneViewport()) {
           wrap.classList.remove("is-pinned");
           wrap.classList.add("native-horizontal");
           gsap.set(track, { clearProps: "x" });
@@ -374,7 +430,7 @@ function enableNativeHorizontal() {
 }
 
 function setupHorizontalWheelForAbout() {
-  if (isTouch) return;
+  if (isTouch || isPhoneViewport()) return;
   ABOUT_HORIZONTAL_IDS.forEach((id) => {
     const wrap = document.getElementById(id);
     if (!wrap) return;
@@ -422,15 +478,16 @@ function flashLight() {
 }
 
 function setupMaskLineReveals(gsap, ScrollTrigger) {
+  const duration = isCinematicDesktop() ? 1.1 : 0.7;
   document.querySelectorAll(".mask-reveal-inner").forEach((node) => {
     gsap.to(node, {
       yPercent: 0,
       ease: MOTION.easeSoft,
-      duration: 1.1,
+      duration,
       scrollTrigger: {
         trigger: node.closest(".scene") || node,
-        start: "top 82%",
-        toggleActions: "play none none reverse"
+        start: "top 88%",
+        toggleActions: "play none none none"
       }
     });
   });
@@ -438,12 +495,12 @@ function setupMaskLineReveals(gsap, ScrollTrigger) {
   document.querySelectorAll(".line-reveal").forEach((line) => {
     gsap.to(line, {
       scaleX: 1,
-      duration: 0.95,
+      duration: duration * 0.85,
       ease: MOTION.easeSoft,
       scrollTrigger: {
         trigger: line.closest(".scene") || line,
-        start: "top 84%",
-        toggleActions: "play none none reverse"
+        start: "top 90%",
+        toggleActions: "play none none none"
       }
     });
   });
@@ -451,31 +508,24 @@ function setupMaskLineReveals(gsap, ScrollTrigger) {
 
 function setupMobileMotion(gsap, ScrollTrigger) {
   setupMaskLineReveals(gsap, ScrollTrigger);
-  gsap.utils.toArray(".project-visual").forEach((node) => {
-    gsap.to(node, {
-      clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-      duration: 1.2,
-      ease: MOTION.easeSoft,
-      scrollTrigger: {
-        trigger: node,
-        start: "top 90%",
-        toggleActions: "play none none reverse"
-      }
-    });
-  });
 
-  // Gentle mobile-only vertical parallax for depth without pinned complexity.
-  gsap.utils.toArray(".depth-layer").forEach((node) => {
-    gsap.to(node, {
-      yPercent: -8,
-      ease: "none",
-      scrollTrigger: {
-        trigger: node.closest(".scene") || node,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 0.65
+  // Lightweight reveal only — no parallax / clipPath scrubbing on mobile.
+  gsap.utils.toArray(".project-visual").forEach((node) => {
+    gsap.fromTo(
+      node,
+      { opacity: 0.35, y: 18 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        ease: MOTION.easeSoft,
+        scrollTrigger: {
+          trigger: node,
+          start: "top 92%",
+          toggleActions: "play none none none"
+        }
       }
-    });
+    );
   });
 }
 
@@ -499,6 +549,12 @@ function setupGsapScenes() {
     enableNativeHorizontal();
     setupSelectedWorkScroller(gsap, ScrollTrigger);
     setupMobileMotion(gsap, ScrollTrigger);
+    // Keep journey native on tablet; phones stack via CSS.
+    if (isPhoneViewport()) {
+      document.querySelectorAll("#journey-scroll, #work-scroll").forEach((wrap) => {
+        wrap.classList.remove("native-horizontal", "is-pinned");
+      });
+    }
     return;
   }
 
