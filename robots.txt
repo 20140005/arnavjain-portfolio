@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /v2/
 
-Sitemap: https://arnavjain.com/sitemap.xml
+Sitemap: https://www.arnavjain.com.au/sitemap.xml

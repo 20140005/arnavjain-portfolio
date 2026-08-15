@@ -1,13 +1,36 @@
 # Arnav Jain Portfolio
 
-A modern single-page developer portfolio website with a dark tech aesthetic.
+Cinematic personal portfolio for **Arnav Jain** — Technology × Business × Building.
+
+Live domain: [www.arnavjain.com.au](https://www.arnavjain.com.au/)
+
+## Stack
+
+- Static HTML / CSS / JavaScript
+- GSAP + ScrollTrigger (homepage cinematic motion)
+- Formspree contact form (no custom backend)
 
 ## Run locally
 
-Open `index.html` in your browser.
+```bash
+python3 -m http.server 5500
+```
 
-## Customize quickly
+Open `http://127.0.0.1:5500/`
 
-- Edit content in `index.html`
-- Tune colors/layout in `styles.css`
-- Update rotating hero text in `script.js`
+## Main pages
+
+- `/` — cinematic home narrative
+- `/work.html` — selected work
+- `/work/ajcrm/` — AJCRM case study
+- `/global-sync-managing-director.html` — Global Sync role page
+- `/journey.html` — timeline
+- `/contact.html` — contact form
+
+## Security notes
+
+- CSP + Permissions-Policy meta tags on public pages
+- Host headers via `vercel.json` (Vercel) and `_headers` (Netlify)
+- External links use `rel="noopener noreferrer"`
+- Contact form uses honeypot + field length limits
+- Archive `/v2/` is `noindex` and disallowed in `robots.txt`

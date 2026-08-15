@@ -5,278 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Selected projects by Arnav Jain across web development, SEO, and growth marketing, with practical outcomes and implementation focus."
+      content="Selected work by Arnav Jain across software, CRM systems, digital strategy, and growth execution."
     />
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; frame-ancestors 'none';"
+      content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io https://api.github.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
     />
-    <link rel="canonical" href="https://arnavjain.com/work.html" />
-    <meta property="og:title" content="Arnav Jain Work | Projects and Case Studies" />
-    <meta property="og:description" content="Selected technical and growth projects by Arnav Jain in web development, SEO, and marketing strategy." />
-    <meta property="og:image" content="https://arnavjain.com/assets/arnav-jain-photo.png" />
-    <meta property="og:url" content="https://arnavjain.com/work.html" />
+    <link rel="canonical" href="https://www.arnavjain.com.au/work.html" />
+    <meta property="og:title" content="Selected Work | Arnav Jain" />
+    <meta property="og:description" content="Technology × Business × Building projects by Arnav Jain." />
+    <meta property="og:image" content="https://www.arnavjain.com.au/assets/arnav-portrait-cinematic.png" />
+    <meta property="og:url" content="https://www.arnavjain.com.au/work.html" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Arnav Jain Portfolio" />
-    <meta property="og:locale" content="en_AU" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Arnav Jain Work | Projects and Case Studies" />
-    <meta name="twitter:description" content="Explore Arnav Jain's portfolio projects across engineering, marketing, and SEO." />
-    <meta name="twitter:image" content="https://arnavjain.com/assets/arnav-jain-photo.png" />
-    <meta name="keywords" content="Arnav Jain Projects, Web Development Portfolio, Solar Marketing Strategy, SEO Case Studies, Student Cost Index, Sunworx Energy Website">
-    <title>Arnav Jain | Professional Work & Case Studies</title>
-    <link rel="icon" type="image/png" href="./assets/arnav-jain-photo.png">
+    <meta name="twitter:title" content="Selected Work | Arnav Jain" />
+    <meta name="twitter:description" content="Case studies and project scenes from software and business system work." />
+    <meta name="twitter:image" content="https://www.arnavjain.com.au/assets/arnav-portrait-cinematic.png" />
+    <title>Selected Work | Arnav Jain</title>
+    <link rel="icon" type="image/png" href="./assets/arnav-portrait-cinematic.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Manrope:wght@500;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="theme-transition"></div>
-    <header class="site-header">
+    <div class="grain-overlay" aria-hidden="true"></div>
+    <div class="page-transition" id="page-transition" aria-hidden="true"></div>
+    <div class="theme-transition" aria-hidden="true"></div>
+
+    <header class="site-header cinematic-nav nav-reveal">
       <div class="container nav-wrap">
-        <a href="./index.html" class="logo">ARNAV JAIN</a>
+        <a href="./index.html" class="logo">AJ</a>
         <nav class="nav-links">
-          <a href="./index.html">Home</a>
-          <a href="./journey.html">Journey</a>
-          <a class="active" href="./work.html">Work</a>
-          <a href="./contact.html">Contact</a>
+          <a href="./work.html">WORK</a>
+          <a href="./journey.html">JOURNEY</a>
+          <a href="./index.html#about">ABOUT</a>
+          <a href="./contact.html">CONTACT</a>
         </nav>
         <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Toggle Menu">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
         <div id="mobile-menu" class="mobile-nav">
-          <p class="mobile-nav-label">Navigation</p>
-          <a href="./index.html" style="--order: 1">Home</a>
-          <a href="./journey.html" style="--order: 2">Journey</a>
-          <a class="active" href="./work.html" style="--order: 3">Work</a>
-          <a href="./contact.html" style="--order: 4">Contact</a>
-          
-          <div class="mobile-nav-footer">
-            <p class="mobile-nav-label">Connect</p>
-            <div class="mobile-social-links">
-              <a href="https://www.instagram.com/jainn.arnav" target="_blank" rel="noopener noreferrer">Instagram</a>
-              <a href="https://www.linkedin.com/in/arnjain/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </div>
-          </div>
+          <a href="./work.html">WORK</a>
+          <a href="./journey.html">JOURNEY</a>
+          <a href="./index.html#about">ABOUT</a>
+          <a href="./contact.html">CONTACT</a>
         </div>
-        <button id="theme-toggle" class="theme-btn" type="button">Theme</button>
+        <button id="theme-toggle" class="theme-btn" type="button">THEME</button>
       </div>
     </header>
 
     <main class="container">
       <header class="work-hero reveal">
-        <p class="eyebrow">Work & Expertise</p>
-        <h1>Selected Work <span style="display: block;">and Practical Outcomes.</span></h1>
-        <p class="hero-text" style="margin: 0 auto;">
-          These projects show a consistent pattern: clarify the goal, ship with
-          quality, and improve using evidence from real usage.
+        <p class="eyebrow">Selected Work</p>
+        <h1>Build. Ship. Iterate.</h1>
+        <p class="hero-text">
+          Projects across software, CRM, web platforms, and digital growth.
         </p>
       </header>
 
       <div class="work-grid-v2">
         <article class="work-card-v2 reveal">
-          <div class="card-header">
-            <span class="card-category">Engineering</span>
-            <h3>Website Development</h3>
-            <p>
-              Built responsive website experiences with a focus on clean delivery,
-              maintainability, and user clarity across devices.
-            </p>
+          <span class="card-category">PROJECT 01</span>
+          <h3>AJCRM</h3>
+          <p>Comprehensive CRM for solar and battery installation workflows.</p>
+          <div class="tech-pills">
+            <span class="tech-pill">CRM</span><span class="tech-pill">Product</span><span class="tech-pill">Operations</span>
           </div>
-          <div class="card-footer">
-            <div class="tech-pills">
-              <span class="tech-pill">Next.js</span>
-              <span class="tech-pill">TypeScript</span>
-              <span class="tech-pill">React</span>
-              <span class="tech-pill">Node.js</span>
-            </div>
-            <a href="#" class="card-link">View Methodology <span>→</span></a>
-          </div>
-          <div class="floating-icon">💻</div>
+          <a href="./work/ajcrm/" class="card-link">VIEW PROJECT →</a>
         </article>
 
         <article class="work-card-v2 reveal">
-          <div class="card-header">
-            <span class="card-category">Data Visualization</span>
-            <h3>Student Cost Index Website</h3>
-            <p>
-              A data-visualization project where I translated a dense dataset
-              into an easier web story for exploration and comparison.
-            </p>
+          <span class="card-category">PROJECT 02</span>
+          <h3>Global Sync</h3>
+          <p>Current chapter at the intersection of business strategy and digital delivery.</p>
+          <div class="tech-pills">
+            <span class="tech-pill">Strategy</span><span class="tech-pill">Web</span><span class="tech-pill">CRM</span>
           </div>
-          <div class="card-footer">
-            <div class="tech-pills">
-              <span class="tech-pill">HTML</span>
-              <span class="tech-pill">D3.js</span>
-              <span class="tech-pill">Data Analytics</span>
-            </div>
-            <a href="https://20140005.github.io/fit2179-dv2/#work" target="_blank" rel="noopener noreferrer" class="card-link">View Live Project <span>→</span></a>
-          </div>
-          <div class="floating-icon">📊</div>
+          <a href="./global-sync-managing-director.html" class="card-link">VIEW PROJECT →</a>
         </article>
 
         <article class="work-card-v2 reveal">
-          <div class="card-header">
-            <span class="card-category">Web App</span>
-            <h3>QUICKY</h3>
-            <p>
-              A utility web app focused on speed and ease of use. The project
-              helped me practice faster UI workflows and practical frontend
-              decision-making.
-            </p>
+          <span class="card-category">PROJECT 03</span>
+          <h3>RadiantPower</h3>
+          <p>Web-based project for digital energy-focused presence and delivery.</p>
+          <div class="tech-pills">
+            <span class="tech-pill">HTML</span><span class="tech-pill">Web</span>
           </div>
-          <div class="card-footer">
-            <div class="tech-pills">
-              <span class="tech-pill">JavaScript</span>
-              <span class="tech-pill">Frontend</span>
-              <span class="tech-pill">UX Optimization</span>
-            </div>
-            <a href="https://github.com/20140005/QUICKY" target="_blank" rel="noopener noreferrer" class="card-link">View Repository <span>→</span></a>
-          </div>
-          <div class="floating-icon">⚡</div>
+          <a href="https://github.com/20140005/RadiantPower" target="_blank" rel="noopener noreferrer" class="card-link">VIEW PROJECT →</a>
         </article>
 
         <article class="work-card-v2 reveal">
-          <div class="card-header">
-            <span class="card-category">Renewable Tech</span>
-            <h3>Sunworx Energy</h3>
-            <p>
-              Worked on digital presence improvements, including website updates,
-              SEO structure, and content presentation for better discoverability
-              and user trust.
-            </p>
+          <span class="card-category">PROJECT 04</span>
+          <h3>ProCare Solar</h3>
+          <p>Marketing, campaign and performance direction with digital execution.</p>
+          <div class="tech-pills">
+            <span class="tech-pill">Marketing</span><span class="tech-pill">Growth</span>
           </div>
-          <div class="card-footer">
-            <div class="tech-pills">
-              <span class="tech-pill">SEO</span>
-              <span class="tech-pill">UI/UX</span>
-              <span class="tech-pill">Web Dev</span>
-              <span class="tech-pill">Analytics</span>
-            </div>
-            <a href="https://sunworxenergy.com.au" target="_blank" rel="noopener noreferrer" class="card-link">Visit Website <span>→</span></a>
-          </div>
-          <div class="floating-icon">☀️</div>
+          <a href="./journey.html" class="card-link">VIEW PROJECT →</a>
         </article>
 
         <article class="work-card-v2 reveal">
-          <div class="card-header">
-            <span class="card-category">Growth</span>
-            <h3>Digital Marketing</h3>
-            <p>
-              Planned and supported campaigns across channels with a focus on
-              message clarity, audience targeting, and iterative learning from
-              campaign performance.
-            </p>
+          <span class="card-category">PROJECT 05</span>
+          <h3>Quicky</h3>
+          <p>Utility app concept focused on speed and practical frontend workflow.</p>
+          <div class="tech-pills">
+            <span class="tech-pill">Frontend</span><span class="tech-pill">UX</span>
           </div>
-          <div class="card-footer">
-            <div class="tech-pills">
-              <span class="tech-pill">Lead Gen</span>
-              <span class="tech-pill">Ads</span>
-              <span class="tech-pill">Social</span>
-              <span class="tech-pill">Strategy</span>
-            </div>
-            <a href="#" class="card-link">See Results <span>→</span></a>
-          </div>
-          <div class="floating-icon">📈</div>
+          <a href="https://github.com/20140005/Quicky" target="_blank" rel="noopener noreferrer" class="card-link">VIEW PROJECT →</a>
         </article>
 
         <article class="work-card-v2 reveal">
-          <div class="card-header">
-            <span class="card-category">Optimization</span>
-            <h3>SEO & Performance</h3>
-            <p>
-              Improved search readiness and page performance through technical
-              audits, metadata cleanup, and better site structure decisions.
-            </p>
+          <span class="card-category">PROJECT 06</span>
+          <h3>FIT2179 Data Visualisation</h3>
+          <p>Interactive data storytelling and visual analysis project.</p>
+          <div class="tech-pills">
+            <span class="tech-pill">HTML</span><span class="tech-pill">Data</span>
           </div>
-          <div class="card-footer">
-            <div class="tech-pills">
-              <span class="tech-pill">GA4</span>
-              <span class="tech-pill">GTM</span>
-              <span class="tech-pill">Lighthouse</span>
-              <span class="tech-pill">Technical SEO</span>
-            </div>
-            <a href="#" class="card-link">Performance Data <span>→</span></a>
-          </div>
-          <div class="floating-icon">🔍</div>
-        </article>
-
-        <article class="work-card-v2 reveal">
-          <div class="card-header">
-            <span class="card-category">Industrial Tech</span>
-            <h3>Prizeman Foils</h3>
-            <p>
-              Contributed to digital and creative execution, helping translate
-              business messaging into clearer visual and online communication.
-            </p>
-          </div>
-          <div class="card-footer">
-            <div class="tech-pills">
-              <span class="tech-pill">Branding</span>
-              <span class="tech-pill">E-commerce</span>
-              <span class="tech-pill">Web Dev</span>
-              <span class="tech-pill">UX Design</span>
-            </div>
-            <a href="https://prizemanfoils.com" target="_blank" rel="noopener noreferrer" class="card-link">Visit Website <span>→</span></a>
-          </div>
-          <div class="floating-icon">✨</div>
-        </article>
-
-        <article class="work-card-v2 reveal">
-          <div class="card-header">
-            <span class="card-category">Visuals</span>
-            <h3>Content & Design</h3>
-            <p>
-              Developed visual and written content aimed at making technical
-              offerings easier to understand for wider audiences.
-            </p>
-          </div>
-          <div class="card-footer">
-            <div class="tech-pills">
-              <span class="tech-pill">Canva</span>
-              <span class="tech-pill">UI Design</span>
-              <span class="tech-pill">Branding</span>
-              <span class="tech-pill">Copywriting</span>
-            </div>
-            <a href="#" class="card-link">Brand Book <span>→</span></a>
-          </div>
-          <div class="floating-icon">🎨</div>
+          <a href="https://github.com/20140005/fit2179-dv2" target="_blank" rel="noopener noreferrer" class="card-link">VIEW PROJECT →</a>
         </article>
       </div>
-
-      <section class="container section reveal" style="text-align: center; border-top: 1px solid var(--line); padding-top: 8rem;">
-        <p class="eyebrow">Work Ethic</p>
-        <h2 style="font-size: 3.5rem;">How I Work</h2>
-        <div class="cards" style="margin-top: 4rem;">
-          <article class="card glass-card">
-            <h3 style="color: var(--accent);">01. Discovery</h3>
-            <p>Understand the business goal, user need, and constraints before building.</p>
-          </article>
-          <article class="card glass-card">
-            <h3 style="color: var(--accent);">02. Execution</h3>
-            <p>Ship focused solutions quickly, then refine with feedback and observation.</p>
-          </article>
-          <article class="card glass-card">
-            <h3 style="color: var(--accent);">03. Evolution</h3>
-            <p>Measure outcomes after launch and improve based on what actually works.</p>
-          </article>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-wrap">
         <p>© <span id="year"></span> Arnav Jain</p>
-        <p>Simple, useful and growth-focused work</p>
+        <p>Technology × Business × Building</p>
       </div>
     </footer>
 
